@@ -18,6 +18,7 @@ int main(int argc, char *argv[])
 
     if ((dp = opendir(argv[1])) == NULL) {
         fprintf(stderr, "can't open %s: %s\n", argv[1], strerror(errno));
+        /* perror() can be also used. */
         exit(errno);
     }
 
