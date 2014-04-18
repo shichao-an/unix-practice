@@ -6,9 +6,12 @@ CFLAGS = -Wall
 %.o: %.c
 	$(CC) -c $(CFLAGS) -o $@ $<
 
-all: myls
+all: f1.3_ls f1.8_error
 
-myls: myls.o 
+f1.3_ls: f1.3_ls.o 
+	$(CC) -o $@ $^
+
+f1.8_error: f1.8_error.o
 	$(CC) -o $@ $^
 
 clean:
